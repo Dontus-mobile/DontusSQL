@@ -16,7 +16,7 @@ namespace DontusSQL
 
             // var connect = "Data Source =" + Server + "; Initial Catalog=master; Integrated Security = false; User ID = " + User + ";" + " Password =" + "'" + Senha + "'";
             //var connectionString = "Data Source=DESKTOP-HPV4FPU\\SQLEXPRESS01/;Initial Catalog=master;Integrated Security = true;";
-            var connectionString = @"data source=DESKTOP-HPV4FPU\SQLEXPRESS01;initial catalog="+Banco+";integrated security=True;MultipleActiveResultSets=True;";
+            var connectionString = string.Format(@"data source={0};initial catalog={1};integrated security=True;MultipleActiveResultSets=True;",Server,Banco);
             SqlConnection.ConnectionString = connectionString.ToString();
             SqlConnection.Open();
             return SqlConnection;

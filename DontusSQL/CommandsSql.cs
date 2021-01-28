@@ -23,7 +23,7 @@ namespace DontusSQL
 
                 try
                 {
-                    Conectar("DESKTOP-HPV4FPU\\SQLEXPRESS01", item.name);
+                    Conectar("DESKTOP-TC3DMML\\SQLEXPRESS", item.name);
                     //SqlConnection.Open();
                     SqlConnection.Query(Commands);
                     SqlConnection.Close();
@@ -44,7 +44,7 @@ namespace DontusSQL
             var error = string.Empty;
             try
             {
-                Conectar("DESKTOP-HPV4FPU\\SQLEXPRESS01", NomeBd);
+                Conectar("DESKTOP-TC3DMML\\SQLEXPRESS", NomeBd);
                 SqlConnection.Query(Commands);
                 SqlConnection.Close();
             }
@@ -57,7 +57,7 @@ namespace DontusSQL
         }
         public List<dynamic> RetornaTodosBancos()
         {
-            Conectar("DESKTOP-HPV4FPU\\SQLEXPRESS01", "master");
+            Conectar("DESKTOP-TC3DMML\\SQLEXPRESS", "master");
             var databases = SqlConnection.Query("select database_id, [name] from sys.databases where name NOT  IN ('master','model','msdb','tempdb','ReportServer$SQLEXPRESS','ReportServer$SQLEXPRESSTempDB') ").ToList();
             SqlConnection.Close();
             return databases;
